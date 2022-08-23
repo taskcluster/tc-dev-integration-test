@@ -1,0 +1,30 @@
+version: 1
+reporting: checks-v1
+policy:
+  pullRequests: collaborators
+tasks:
+  - $if: 'tasks_for == "github-push"'
+    then:
+      taskQueueId: built-in/succeed
+      schedulerId: taskcluster-ui
+      created: {$fromNow: ''}
+      deadline: {$fromNow: '1 day'}
+      payload: {}
+      metadata:
+        name: example-task-push-1
+        description: An **example** task
+        owner: ykurmyza@mozilla.com
+        source: http://taskcluster/tasks/create
+    else:
+      $if: 'tasks_for == "github-pull-request"'
+      then:
+        taskQueueId: built-in/succeed
+        schedulerId: taskcluster-ui
+        created: {$fromNow: ''}
+        deadline: {$fromNow: '1 day'}
+        payload: {}
+        metadata:
+          name: example-task-pull-1
+          description: An **example** task
+          owner: ykurmyza@mozilla.com
+          source: http://taskcluster/tasks/create
