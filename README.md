@@ -43,4 +43,4 @@ docker run -it --rm \
 
 You will have to create client credentials for this worker and replace `TASKCLUSTER_CLIENT_ID`/`TASKCLUSTER_ACCESS_TOKENS` with correct values.
 
-.asdfasdf.
+.xx.
