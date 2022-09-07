@@ -14,7 +14,7 @@ tasks:
         name: example-task-1
         description: An **example** task
         owner: ykurmyza@mozilla.com
-        source: http://taskcluster/tasks/create
+        source: '${event.repository.url}'
     else:
       taskQueueId: docker-compose/generic-worker
       schedulerId: taskcluster-ui
@@ -30,7 +30,7 @@ tasks:
         name: example-task-1
         description: An **example** task
         owner: ykurmyza@mozilla.com
-        source: http://taskcluster/tasks/create
+        source: '${event.repository.url}'
 
   - taskQueueId: docker-compose/generic-worker
     schedulerId: taskcluster-ui
@@ -46,4 +46,26 @@ tasks:
       name: Extra-task-for-each-event
       description: An **example** task
       owner: ykurmyza@mozilla.com
-      source: http://taskcluster/tasks/create
+      source: '${event.repository.url}'
+
+  - taskQueueId: built-in/succeed
+    schedulerId: taskcluster-ui
+    created: {$fromNow: ''}
+    deadline: {$fromNow: '1 day'}
+    payload: {}
+    metadata:
+      name: this-will-always-succeed
+      description: An **example** task
+      owner: ykurmyza@mozilla.com
+      source: '${event.repository.url}'
+
+  - taskQueueId: built-in/fail
+    schedulerId: taskcluster-ui
+    created: {$fromNow: ''}
+    deadline: {$fromNow: '1 day'}
+    payload: {}
+    metadata:
+      name: this-will-always-fail
+      description: An **example** task
+      owner: ykurmyza@mozilla.com
+      source: '${event.repository.url}'
