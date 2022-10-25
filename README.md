@@ -1,5 +1,5 @@
 # tc-dev-integration-test
-Testing github integration for dev deployment against [dev.alpha.taskcluster-dev.net](https://dev.alpha.taskclsuter-dev.net)
+Testing github integration for dev deployment against [dev.alpha.taskcluster-dev.net](https://dev.alpha.taskcluster-dev.net/)
 
 Testing... 1, 2, 3!
 
