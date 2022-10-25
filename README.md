@@ -1,5 +1,5 @@
 # tc-dev-integration-test
-Testing github integration for dev deployment against [dev.alpha.taskcluster-dev.net](https://dev.alpha.taskclsuter-dev.net)
+Testing github integration for dev deployment against [dev.alpha.taskcluster-dev.net](https://dev.alpha.taskcluster-dev.net)
 
 `.taskcluster.yml` contains configuration of what tasks will be started on `push` / `pull_request` events.
 
