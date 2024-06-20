@@ -1,8 +1,8 @@
 version: 1
 reporting: checks-v1
-allowComments: collaborators
 policy:
   pullRequests: public_restricted
+  allowComments: collaborators
 tasks:
   - $if: 'tasks_for == "github-pull-request-untrusted"'
     then:
