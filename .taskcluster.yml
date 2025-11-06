@@ -17,7 +17,7 @@ tasks:
         owner: ykurmyza@mozilla.com
         source: '${event.repository.url}'
     else:
-      taskQueueId: 
+      taskQueueId: built-in/succeed
       schedulerId: taskcluster-ui
       created: {$fromNow: ''}
       deadline: {$fromNow: '1 day'}
