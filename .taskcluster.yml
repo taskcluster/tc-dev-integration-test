@@ -17,7 +17,7 @@ tasks:
         owner: ykurmyza@mozilla.com
         source: '${event.repository.url}'
     else:
-      taskQueueId: docker-compose/generic-worker
+      taskQueueId: 
       schedulerId: taskcluster-ui
       created: {$fromNow: ''}
       deadline: {$fromNow: '1 day'}
@@ -33,16 +33,14 @@ tasks:
         owner: ykurmyza@mozilla.com
         source: '${event.repository.url}'
 
-  - taskQueueId: docker-compose/generic-worker
+  - taskQueueId: proj-taskcluster/azure-arm
     schedulerId: taskcluster-ui
     created: {$fromNow: ''}
     deadline: {$fromNow: '1 day'}
     payload:
       command:
-          - - /bin/bash
-            - '-c'
-            - for ((i=1;i<=200;i++)); do echo $i; sleep 0.1; done
-      maxRunTime: 630
+          - dir
+      maxRunTime: 60
     metadata:
       name: Extra-task-for-each-event
       description: An **example** task
